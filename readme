@@ -1,0 +1,61 @@
+### Objective:
+
+Build an **Express.js** application following the **Model-View-Controller (MVC)** pattern. The goal is to perform **CRUD operations** on files using the `fs` module instead of a database. You can use **Thunder Client** to test your API endpoints.
+
+### Steps:
+
+1. **Set Up the Project:**
+   - Initialize a Node.js project with `npm init -y`.
+   - Install **Express** using `npm install express`.
+   - Create the following folders:
+     - `models/` → for handling file-based data operations.
+     - `controllers/` → for managing request logic.
+     - `routes/` → for defining API routes.
+   
+2. **Configure the Express Server:**
+   - Create `server.js` or `app.js` as the entry point.
+   - Set up an Express server and use `express.json()` to handle JSON request bodies.
+   - Import and use route files.
+   - Implement Express error-handling middleware to catch and forward errors.
+
+3. **Create the Model Layer (`models/`):**
+   - Use the `fs` module to **read, write, update, and delete** data in a `products.json` file.
+   - Implement functions to:
+     - Add a new product.
+     - Retrieve all products.
+     - Update a product.
+     - Delete a product.
+
+4. **Develop the Controller Layer (`controllers/`):**
+   - Define functions to handle product operations.
+   - Ensure that the controller interacts with the model for CRUD actions.
+
+5. **Set Up Routes (`routes/`):**
+   - Define API endpoints using Express Router:
+     - `GET /products` → Fetch all products.
+     - `POST /products` → Add a new product.
+     - `PUT /products/:id` → Update a product's details.
+     - `DELETE /products/:id` → Remove a product.
+   - Link each route to the respective controller function.
+
+6. **Validate Incoming Data Using Middleware:**
+   - Implement middleware to validate product data before processing.
+   - Ensure each product has:
+     - `id`
+     - `title`
+     - `description`
+     - `price`
+     - `quantity`
+   - Reject invalid data with appropriate error responses.
+
+7. **Error Handling Middleware:**
+   - Catch all errors and forward them to the error-handling middleware.
+   - Handle file operation errors and invalid request errors gracefully.
+
+8. **Test the API with Thunder Client:**
+   - Install the **Thunder Client** extension in VS Code.
+   - Send API requests to verify CRUD functionality.
+   - Ensure the `products.json` file updates correctly.
+
+9. **Enhancements (Optional):**
+   - Improve error handling for file operations
